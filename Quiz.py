@@ -1,8 +1,13 @@
 import random
+import os
+api_key = os.getenv("GEMINI_API_KEY")
+
 import ast
 from google import genai
+from dotenv import load_dotenv
+load_dotenv()
 
-client = genai.Client(api_key="AIzaSyBj3vpEG11vtF_q-H3dcP4EALzcgy2K8_I")
+client = genai.Client(api_key=api_key)
 
 topics = [
     "Mathematics", "Science", "History", "Geography", "Literature",
